@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detector de CPF/CNPJ</title>
+  <meta name="description" content="Digite CPF ou CNPJ, o app formata e valida." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="head">
+      <div class="logo">ID</div>
+      <div>
+        <h1>Detector de CPF/CNPJ</h1>
+        <p>Digite um número, o app formata e diz se é <strong>válido</strong> ou <strong>inválido</strong>.</p>
+      </div>
+    </header>
+
+    <section class="card">
+      <label class="label" for="doc">CPF ou CNPJ</label>
+
+      <div class="row">
+        <input
+          id="doc"
+          class="input"
+          inputmode="numeric"
+          placeholder="Digite só números..."
+          maxlength="18"
+          autocomplete="off"
+        />
+        <button id="btnValidate" class="btn" type="button">Validar</button>
+      </div>
+
+      <div class="actions">
+        <button id="btnClear" class="btn btn--ghost" type="button">Limpar</button>
+        <button id="btnCopy" class="btn btn--soft" type="button">Copiar</button>
+      </div>
+
+      <div id="result" class="result" aria-live="polite">
+        <span class="dot"></span>
+        <div>
+          <strong id="resultTitle">Aguardando...</strong>
+          <div class="muted" id="resultDesc">Digite um CPF (11) ou CNPJ (14) para validar.</div>
+        </div>
+      </div>
+
+      <small class="hint">Dica: você pode colar com pontos/traços — eu limpo e formato automaticamente.</small>
+    </section>
+
+    <footer class="foot">
+      <span>Feito por Matheus • HTML/CSS/JS</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
