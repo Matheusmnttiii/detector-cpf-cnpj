@@ -4,54 +4,155 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Detector de CPF/CNPJ</title>
-  <meta name="description" content="Digite CPF ou CNPJ, o app formata e valida." />
+  <meta name="description" content="Digite CPF ou CNPJ, o app formata e valida instantaneamente." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#" aria-label="ID Validator">
+        <span class="brand__logo">ID</span>
+        <span class="brand__text">
+          <strong>ID Validator</strong>
+          <small>CPF • CNPJ • Validação</small>
+        </span>
+      </a>
+      <div class="topbar__actions">
+        <button class="btn btn--ghost" id="openAbout" type="button">Sobre</button>
+      </div>
+    </div>
+  </header>
+
   <main class="container">
-    <header class="head">
-      <div class="logo">ID</div>
-      <div>
-        <h1>Detector de CPF/CNPJ</h1>
-        <p>Digite um número, o app formata e diz se é <strong>válido</strong> ou <strong>inválido</strong>.</p>
-      </div>
-    </header>
-
-    <section class="card">
-      <label class="label" for="doc">CPF ou CNPJ</label>
-
-      <div class="row">
-        <input
-          id="doc"
-          class="input"
-          inputmode="numeric"
-          placeholder="Digite só números..."
-          maxlength="18"
-          autocomplete="off"
-        />
-        <button id="btnValidate" class="btn" type="button">Validar</button>
+    <section class="hero">
+      <div class="hero__text">
+        <span class="pill">🆔 Validação instantânea</span>
+        <h1>Valide seu <span class="accent">CPF ou CNPJ</span></h1>
+        <p>
+          Digite um número, o app formata automaticamente e valida em tempo real. Suporta CPF (11 dígitos) e CNPJ (14 dígitos).
+        </p>
       </div>
 
-      <div class="actions">
-        <button id="btnClear" class="btn btn--ghost" type="button">Limpar</button>
-        <button id="btnCopy" class="btn btn--soft" type="button">Copiar</button>
-      </div>
+      <div class="hero__panel">
+        <div class="input-group">
+          <label class="label" for="doc">Digite seu CPF ou CNPJ</label>
+          <div class="input-wrapper">
+            <input
+              id="doc"
+              class="input"
+              inputmode="numeric"
+              placeholder="Ex: 123.456.789-10"
+              maxlength="18"
+              autocomplete="off"
+            />
+            <button id="btnValidate" class="btn" type="button">Validar</button>
+          </div>
+        </div>
 
-      <div id="result" class="result" aria-live="polite">
-        <span class="dot"></span>
-        <div>
-          <strong id="resultTitle">Aguardando...</strong>
-          <div class="muted" id="resultDesc">Digite um CPF (11) ou CNPJ (14) para validar.</div>
+        <div class="actions">
+          <button id="btnClear" class="btn btn--ghost" type="button">🗑️ Limpar</button>
+          <button id="btnCopy" class="btn btn--soft" type="button">📋 Copiar</button>
+        </div>
+
+        <div id="result" class="result" aria-live="polite" aria-atomic="true">
+          <span class="dot"></span>
+          <div>
+            <strong id="resultTitle">Aguardando...</strong>
+            <div class="muted" id="resultDesc">Digite um CPF (11) ou CNPJ (14) para validar.</div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <p class="info-title">💡 Dica útil</p>
+          <p class="info-text">Cole números com pontos e traços — formatamos automaticamente! Tente: 123.456.789-09</p>
         </div>
       </div>
-
-      <small class="hint">Dica: você pode colar com pontos/traços — eu limpo e formato automaticamente.</small>
     </section>
 
-    <footer class="foot">
-      <span>Feito por Matheus • HTML/CSS/JS</span>
-    </footer>
+    <section class="section section--alt">
+      <div class="section__head">
+        <h2>Como funciona</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature__icon">📝</div>
+          <h3>Formatação Automática</h3>
+          <p>Limpa e formata seus dados conforme você digita. Suporte para pontos, traços e espaços.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature__icon">✅</div>
+          <h3>Validação Instantânea</h3>
+          <p>Algoritmo oficial de validação. Detecta números iguais e verifica dígitos verificadores.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature__icon">🔒</div>
+          <h3>Privado & Seguro</h3>
+          <p>Tudo roda no seu navegador. Nenhum dado é enviado para servidores.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature__icon">⚡</div>
+          <h3>Ultra Rápido</h3>
+          <p>Validação em tempo real. Feedback instantâneo enquanto você digita.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature__icon">📋</div>
+          <h3>Copiar com 1 Clique</h3>
+          <p>Copie o CPF/CNPJ formatado direto para a área de transferência.</p>
+        </div>
+        
+        <div class="feature">
+          <div class="feature__icon">📱</div>
+          <h3>Responsivo</h3>
+          <p>Funciona perfeitamente em desktop, tablet e smartphone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head">
+        <h2>Exemplos de teste</h2>
+        <p>Clique nos exemplos abaixo para testar a validação:</p>
+      </div>
+
+      <div class="examples-grid">
+        <div class="example-card" data-test="11144477735">
+          <span class="example-label">CPF Válido</span>
+          <code>111.444.777-35</code>
+          <p class="example-desc">CPF com formato válido</p>
+        </div>
+        
+        <div class="example-card" data-test="11111111111">
+          <span class="example-label">CPF Inválido</span>
+          <code>111.111.111-11</code>
+          <p class="example-desc">Números todos iguais</p>
+        </div>
+
+        <div class="example-card" data-test="34028316000160">
+          <span class="example-label">CNPJ Válido</span>
+          <code>34.028.316/0001-60</code>
+          <p class="example-desc">CNPJ com formato válido</p>
+        </div>
+
+        <div class="example-card" data-test="00000000000000">
+          <span class="example-label">CNPJ Inválido</span>
+          <code>00.000.000/0000-00</code>
+          <p class="example-desc">Números todos iguais</p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© 2026 ID Validator</span>
+      <span class="muted">Feito por Matheus • HTML/CSS/JS</span>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
